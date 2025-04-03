@@ -227,7 +227,7 @@ export class Telnet extends EventEmitter {
    */
   sendText(str: string): void {
     const ptr = writeAsciiToMemory(telnet, str);
-    telnet.telnet_send_text(this.pointer, ptr, length - 1);
+    telnet.telnet_send_text(this.pointer, ptr, str.length - 1);
     telnet.free(ptr);
   }
 
